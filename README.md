@@ -9,4 +9,4 @@
 
 ##### 预览
 
-![启动页](https://github.com/twangithub/KotlinBase/blob/master/image/first.jpg)![引导1页1](https://github.com/twangithub/KotlinBase/blob/master/image/splash1.png)![引导1页1](https://github.com/twangithub/KotlinBase/blob/master/image/splash3.png)![主页](https://github.com/twangithub/KotlinBase/blob/master/image/main.png)
+![启动页](https://github.com/twangithub/KotlinBase/blob/master/image/first.png)![引导1页1](https://github.com/twangithub/KotlinBase/blob/master/image/splash1.png)![引导1页1](https://github.com/twangithub/KotlinBase/blob/master/image/splash3.png)![主页](https://github.com/twangithub/KotlinBase/blob/master/image/main.png)
