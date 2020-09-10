@@ -46,11 +46,14 @@ abstract class BaseFragment<T> : Fragment() {
         ButterKnife.bind(this, mRootView!!)
         initData(arguments)
         initTitle()
+        return mRootView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initView(mRootView, savedInstanceState)
         mIsPrepare = true
-        onLazyLoad()
-        setListener()
-        return mRootView
+        getData()
     }
 
 
@@ -91,8 +94,6 @@ abstract class BaseFragment<T> : Fragment() {
      */
     protected fun initData(arguments: Bundle?) {}
 
-    protected fun setListener() {}
-
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         mIsVisible = isVisibleToUser
@@ -106,14 +107,14 @@ abstract class BaseFragment<T> : Fragment() {
      */
     protected fun onVisibleToUser() {
         if (mIsPrepare && mIsVisible) {
-            onLazyLoad()
+            getData()
         }
     }
 
     /**
      * 懒加载，仅当用户可见切view初始化结束后才会执行
      */
-    protected fun onLazyLoad() {}
+    open fun getData() {}
 
     protected fun <V : View?> findViewById(id: Int): V? {
         return if (mRootView == null) {

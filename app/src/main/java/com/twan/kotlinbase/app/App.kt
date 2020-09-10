@@ -3,14 +3,14 @@ package com.twan.kotlinbase.app
 import android.app.Activity
 import android.app.Application
 import android.os.Process
+import com.twan.kotlinbase.util.MyUtils
 import rxhttp.wrapper.param.RxHttp
 import kotlin.system.exitProcess
 
 class App : Application() {
 
-    private var allActivities = mutableSetOf<Activity>()
-
     companion object {
+        private var allActivities = mutableSetOf<Activity>()
         private lateinit var appInstance: App
 
         @Synchronized
@@ -19,33 +19,35 @@ class App : Application() {
             return appInstance
         }
 
-    }
+        @JvmStatic
+        fun addActivity(act: Activity) {
+            allActivities.add(act)
+        }
 
-    override fun onCreate() {
-        super.onCreate()
-        appInstance = this
-        RxHttp.setDebug(true)
-    }
-
-    fun addActivity(act: Activity) {
-        allActivities.add(act)
-    }
-
-    fun removeActivity(act: Activity?) {
-        if (allActivities != null) {
+        @JvmStatic
+        fun removeActivity(act: Activity?) {
             allActivities.remove(act)
         }
-    }
 
-    fun exitApp() {
-        if (allActivities != null) {
+        @JvmStatic
+        fun exitApp() {
             synchronized(allActivities) {
                 for (act in allActivities) {
                     act.finish()
                 }
             }
+            Process.killProcess(Process.myPid())
+            exitProcess(0)
         }
-        Process.killProcess(Process.myPid())
-        exitProcess(0)
+
     }
+
+    override fun onCreate() {
+        super.onCreate()
+        appInstance = this
+        //添加公共请求头
+        //RxHttp.setOnParamAssembly { it.addHeader("authorization", "Bearer ${MyUtils.getToken()}") }
+        //RxHttp.setDebug(true)
+    }
+
 }

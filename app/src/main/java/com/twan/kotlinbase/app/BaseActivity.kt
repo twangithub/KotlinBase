@@ -39,10 +39,11 @@ abstract class BaseActivity : SwipeBackActivity() {
         super.onCreate(savedInstanceState)
         setContentView(getLayout())
         StatusBarUtil.setLightMode(this)
-        //StatusBarUtil.setColor(this, Color.TRANSPARENT,0);
+        StatusBarUtil.setColor(this, resources.getColor(R.color.text_white), 25)
+        //StatusBarUtil.setColorForSwipeBack(this, resources.getColor(R.color.app_blue), 38)
         ButterKnife.bind(this)
         mContext = this
-        App.getInstance().addActivity(this)
+        App.addActivity(this)
         initEventAndData()
     }
 
@@ -53,7 +54,7 @@ abstract class BaseActivity : SwipeBackActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        App.getInstance().removeActivity(this)
+        App.removeActivity(this)
     }
 
     protected abstract fun getLayout(): Int
