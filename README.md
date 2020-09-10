@@ -13,6 +13,7 @@
 
 ##### 第三方库如下
 
+```groovy
 //工具类<br>
 implementation 'com.blankj:utilcodex:1.29.0'
 
@@ -68,3 +69,4 @@ implementation 'com.contrarywind:Android-PickerView:4.1.9'<br>
 
 //图片选择<br>
 implementation "com.zhihu.android:matisse:0.5.3-beta3"<br>
+```
