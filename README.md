@@ -45,28 +45,28 @@ kapt 'com.jakewharton:butterknife-compiler:10.2.1'
 //xpopup
 implementation 'com.lxj:xpopup:2.0.8'
 
-//SmartRefreshLayout刷新<br>
-implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖<br>
-implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头<br>
+//SmartRefreshLayout刷新
+implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
 
-//banner<br>
+//banner
 implementation 'com.youth.banner:banner:2.1.0'
 
-//顶部栏<br>
-implementation 'com.jaeger.statusbarutil:library:1.5.1'<br>
+//顶部栏
+implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
-//网页浏览<br>
-implementation 'com.just.agentweb:agentweb:4.1.3'<br>
+//网页浏览
+implementation 'com.just.agentweb:agentweb:4.1.3'
 
-//viewpager左右滑动指示器<br>
-implementation 'com.github.hackware1993:MagicIndicator:1.5.0'<br>
+//viewpager左右滑动指示器
+implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
 
-//漂亮的spinner<br>
-implementation "com.github.skydoves:powerspinner:1.1.0"<br>
+//漂亮的spinner
+implementation "com.github.skydoves:powerspinner:1.1.0"
 
-//时间选择<br>
-implementation 'com.contrarywind:Android-PickerView:4.1.9'<br>
+//时间选择
+implementation 'com.contrarywind:Android-PickerView:4.1.9'
 
-//图片选择<br>
-implementation "com.zhihu.android:matisse:0.5.3-beta3"<br>
+//图片选择
+implementation "com.zhihu.android:matisse:0.5.3-beta3"
 ```
