@@ -15,7 +15,7 @@ class TogglePasswordVisibilityEditText @JvmOverloads constructor(
     context: Context?,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = android.R.attr.editTextStyle
-) : AppCompatEditText(context, attrs, defStyleAttr) {
+) : AppCompatEditText(context!!, attrs, defStyleAttr) {
     //切换drawable的引用
     private var visibilityDrawable: Drawable? = null
     private var visibililty = false

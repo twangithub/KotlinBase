@@ -21,7 +21,7 @@ class ClearEditText @JvmOverloads constructor(
     context: Context?,
     attrs: AttributeSet? = null,
     defStyle: Int = android.R.attr.editTextStyle
-) : AppCompatEditText(context, attrs, defStyle), OnFocusChangeListener, TextWatcher {
+) : AppCompatEditText(context!!, attrs, defStyle), OnFocusChangeListener, TextWatcher {
     /**
      * 删除按钮的引用
      */
