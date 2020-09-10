@@ -13,52 +13,58 @@
 
 ##### 第三方库如下
 
-//工具类
+//工具类<br>
 implementation 'com.blankj:utilcodex:1.29.0'
 
-//rxhttp
-implementation 'com.ljx.rxhttp:rxhttp:2.2.8'
-implementation 'com.squareup.okhttp3:okhttp:4.7.2' //rxhttp v2.2.2版本起，需要手动依赖okhttp
-kapt 'com.ljx.rxhttp:rxhttp-compiler:2.2.8' //生成RxHttp类，非kotlin项目，请使用annotationProcessor代替kapt
-implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.0' //管理协程生命周期，页面销毁，关闭请求
+//rxhttp网络库<br>
+implementation 'com.ljx.rxhttp:rxhttp:2.2.8'<br>
+implementation 'com.squareup.okhttp3:okhttp:4.7.2' //rxhttp v2.2.2版本起，需要手动依赖okhttp<br>
+kapt 'com.ljx.rxhttp:rxhttp-compiler:2.2.8' //生成RxHttp类，非kotlin项目，请使用annotationProcessor代替kapt<br>
+implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.0' //管理协程生命周期，页面销毁，关闭请求<br>
 
-//eventbus
+//eventbus<br>
 implementation 'org.greenrobot:eventbus:3.2.0'
 
-//glide
+//glide图片加载库<br>
 implementation 'com.github.bumptech.glide:glide:4.11.0'
 annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-//RxPermissions
+//RxPermissions权限库<br>
 implementation 'com.github.tbruyelle:rxpermissions:0.12'
 implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 
-//swipebacklayout
+//swipebacklayout<br>
 implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
 
-//butterknife
+//butterknife<br>
 implementation 'com.jakewharton:butterknife:10.2.1'
 kapt 'com.jakewharton:butterknife-compiler:10.2.1'
 
-//xpopup
+//xpopup<br>
 implementation 'com.lxj:xpopup:2.0.8'
 
-//SmartRefreshLayout
-implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
-implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+//SmartRefreshLayout刷新<br>
+implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖<br>
+implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头<br>
 
-//banner
+//banner<br>
 implementation 'com.youth.banner:banner:2.1.0'
 
-implementation 'com.jaeger.statusbarutil:library:1.5.1'
+//顶部栏<br>
+implementation 'com.jaeger.statusbarutil:library:1.5.1'<br>
 
-implementation 'com.just.agentweb:agentweb:4.1.3'
+//网页浏览<br>
+implementation 'com.just.agentweb:agentweb:4.1.3'<br>
 
-implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+//viewpager左右滑动指示器<br>
+implementation 'com.github.hackware1993:MagicIndicator:1.5.0'<br>
 
-implementation "com.github.skydoves:powerspinner:1.1.0"
+//漂亮的spinner<br>
+implementation "com.github.skydoves:powerspinner:1.1.0"<br>
 
-implementation 'com.contrarywind:Android-PickerView:4.1.9'
+//时间选择<br>
+implementation 'com.contrarywind:Android-PickerView:4.1.9'<br>
 
-implementation "com.zhihu.android:matisse:0.5.3-beta3"
+//图片选择<br>
+implementation "com.zhihu.android:matisse:0.5.3-beta3"<br>
