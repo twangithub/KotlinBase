@@ -14,35 +14,35 @@
 ##### 第三方库如下
 
 ```groovy
-//工具类<br>
+//工具类
 implementation 'com.blankj:utilcodex:1.29.0'
 
-//rxhttp网络库<br>
-implementation 'com.ljx.rxhttp:rxhttp:2.2.8'<br>
-implementation 'com.squareup.okhttp3:okhttp:4.7.2' //rxhttp v2.2.2版本起，需要手动依赖okhttp<br>
-kapt 'com.ljx.rxhttp:rxhttp-compiler:2.2.8' //生成RxHttp类，非kotlin项目，请使用annotationProcessor代替kapt<br>
-implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.0' //管理协程生命周期，页面销毁，关闭请求<br>
+//rxhttp网络库
+implementation 'com.ljx.rxhttp:rxhttp:2.2.8'
+implementation 'com.squareup.okhttp3:okhttp:4.7.2' //rxhttp v2.2.2版本起，需要手动依赖okhttp
+kapt 'com.ljx.rxhttp:rxhttp-compiler:2.2.8' //生成RxHttp类，非kotlin项目，请使用annotationProcessor代替kapt
+implementation 'com.ljx.rxlife:rxlife-coroutine:2.0.0' //管理协程生命周期，页面销毁，关闭请求
 
-//eventbus<br>
+//eventbus
 implementation 'org.greenrobot:eventbus:3.2.0'
 
-//glide图片加载库<br>
+//glide图片加载库
 implementation 'com.github.bumptech.glide:glide:4.11.0'
 annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
-//RxPermissions权限库<br>
+//RxPermissions权限库
 implementation 'com.github.tbruyelle:rxpermissions:0.12'
 implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 
-//swipebacklayout<br>
+//swipebacklayout
 implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
 
-//butterknife<br>
+//butterknife
 implementation 'com.jakewharton:butterknife:10.2.1'
 kapt 'com.jakewharton:butterknife-compiler:10.2.1'
 
-//xpopup<br>
+//xpopup
 implementation 'com.lxj:xpopup:2.0.8'
 
 //SmartRefreshLayout刷新<br>
