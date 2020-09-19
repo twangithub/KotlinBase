@@ -17,10 +17,12 @@
         android:layout_weight="1"
         android:id="@+id/viewpager" />
 
+    <!-- labeled: 让tab一直显示 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:background="@android:color/white"
         android:layout_alignParentBottom="true"
         android:id="@+id/bottom_navigation"
+        app:labelVisibilityMode="labeled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemIconTint="@drawable/tab_color"
