@@ -1,7 +1,8 @@
 package com.twan.kotlinbase.ui
 
 import android.content.Intent
-import androidx.viewpager.widget.ViewPager
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.adapter.BottomViewPagerAdapter
 import com.twan.kotlinbase.app.BaseActivity
@@ -60,27 +61,21 @@ class MainActivity : BaseActivity() {
 
         setupViewPager(viewpager)
 
-        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
-            override fun onPageScrollStateChanged(state: Int) {
-            }
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-
-            }
-
+        viewpager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 bottom_navigation.menu.getItem(position).isChecked = true
             }
-
         })
     }
 
 
-    private fun setupViewPager(viewPager: ViewPager) {
-        var adapter = BottomViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(Tab1Fragment())
-        adapter.addFragment(Tab2Fragment())
-        adapter.addFragment(Tab3Fragment())
+    private fun setupViewPager(viewPager: ViewPager2) {
+        var fragments= mutableListOf<Fragment>()
+        fragments.add(Tab1Fragment())
+        fragments.add(Tab2Fragment())
+        fragments.add(Tab3Fragment())
+        var adapter = BottomViewPagerAdapter(this, fragments)
         viewPager.adapter = adapter
     }
 }
