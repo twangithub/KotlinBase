@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import java.util.*
 
-//使用的是新的 viewpager2
+//使用新的viewpager2
 class BottomViewPagerAdapter(@NonNull fragmentActivity: FragmentActivity?, private val mFragments: List<Fragment>) : FragmentStateAdapter(fragmentActivity!!) {
     @NonNull
     override fun createFragment(position: Int): Fragment {

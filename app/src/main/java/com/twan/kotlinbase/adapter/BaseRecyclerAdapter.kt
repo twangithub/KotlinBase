@@ -11,9 +11,6 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-/**
- * Created by SCWANG on 2017/6/11.
- */
 abstract class BaseRecyclerAdapter<T> : RecyclerView.Adapter<SmartViewHolder>, ListAdapter {
     private val mLayoutId: Int
     private val mList: MutableList<T>
