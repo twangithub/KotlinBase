@@ -125,4 +125,7 @@ dependencies {
 
     //RecyclerView Adapter
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    //支持超长文本打印
+    implementation 'com.orhanobut:logger:2.2.0'
 }

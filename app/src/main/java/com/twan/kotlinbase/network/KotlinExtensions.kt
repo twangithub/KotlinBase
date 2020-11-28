@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.google.gson.JsonSyntaxException
+import com.orhanobut.logger.Logger
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.app.App
 import rxhttp.wrapper.exception.HttpStatusCodeException
@@ -62,8 +63,8 @@ fun <T> handleNetworkException(throwable: T): String? {
         } else if (throwable is SSLHandshakeException) {//本机时间不对
             R.string.network_local_time_exception
         } else if (throwable is Exception){
-            LogUtils.e("数据异常:${throwable.message}")
-            exceptionData = throwable.message.toString()
+            Logger.e(throwable,"数据异常")
+            exceptionData = if (throwable.message ==null) throwable.toString() else throwable.message.toString()
             R.string.network_unknown_exception
         } else {
             -1
