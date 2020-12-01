@@ -21,11 +21,12 @@ object JsonUtil {
     }
 
     /**
-     * 将json格式转换成list对象
+     * 将json格式转换成list对象,请使用stringToArray
      *
      * @param jsonStr
      * @return
      */
+    @Deprecated("")
     fun jsonToList(jsonStr: String?): List<*>? {
         var objList: List<*>? = null
         try {
@@ -38,10 +39,12 @@ object JsonUtil {
     }
 
     /**
+     * 请使用stringToArray
      * @param json
      * @param type
      * @return
      */
+    @Deprecated("")
     fun json2List(json: String?, type: Type?): Any? {
         return gson.fromJson(json, type)
     }
@@ -95,7 +98,7 @@ object JsonUtil {
 
     /**
      * 将json字符串转为list
-     *
+     * eg: JsonUtil.stringToArray(json,Array<PicBean>::class.java)
      * @param s
      * @param clazz
      * @param <T>
