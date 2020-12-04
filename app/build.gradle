@@ -29,6 +29,10 @@ android {
 
     }
 
+    androidExtensions{
+        experimental = true //kotlin-解决Adapter里xml无法绑定id
+    }
+
     //必须，java 8或更高
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
