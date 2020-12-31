@@ -13,7 +13,7 @@ import rxhttp.toClass
 import rxhttp.wrapper.param.RxHttp
 
 
-class Tab1Fragment: BaseFragment<String>() {
+class Tab1Fragment: BaseFragment() {
     @BindView(R.id.refreshLayout) lateinit var refreshLayout: SmartRefreshLayout
 
     override fun getLayoutId(): Int {

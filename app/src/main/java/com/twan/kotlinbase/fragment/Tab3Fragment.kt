@@ -7,7 +7,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.app.BaseFragment
 
-class Tab3Fragment: BaseFragment<Any>() {
+class Tab3Fragment: BaseFragment() {
     @BindView(R.id.refreshLayout) lateinit var refreshLayout:SmartRefreshLayout
 
     override fun getLayoutId(): Int {

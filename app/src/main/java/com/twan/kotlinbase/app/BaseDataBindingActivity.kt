@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
@@ -12,35 +14,30 @@ import com.jaeger.library.StatusBarUtil
 import com.twan.kotlinbase.R
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity
 
-//如果你没有使用databinding,请继承这个基类
-abstract class BaseActivity : SwipeBackActivity() {
+//如果你使用databinding,请继承这个基类,用法不变
+abstract class BaseDataBindingActivity<T: ViewDataBinding> : SwipeBackActivity() {
     protected var mContext: Activity? = null
 
-    @JvmField
     @BindView(R.id.back)
-    var back: ImageButton? = null
+    lateinit var back: ImageButton
 
-    @JvmField
     @BindView(R.id.tv_back_text)
-    var tv_back_text: TextView? = null
+    lateinit var tv_back_text: TextView
 
-    @JvmField
     @BindView(R.id.ib_right)
-    var ib_right: ImageButton? = null
+    lateinit var ib_right: ImageButton
 
-    @JvmField
     @BindView(R.id.title)
-    var title: TextView? = null
+    lateinit var title: TextView
 
-    @JvmField
     @BindView(R.id.tv_right)
-    var tv_right: TextView? = null
+    lateinit var tv_right: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayout())
+        mBinding = DataBindingUtil.setContentView(this,getLayout())
         StatusBarUtil.setLightMode(this)
-        StatusBarUtil.setColor(this, resources.getColor(R.color.text_white), 25)
+        StatusBarUtil.setColor(this, resources.getColor(R.color.colorAccent), 25)
         ButterKnife.bind(this)
         mContext = this
         App.addActivity(this)
@@ -57,6 +54,7 @@ abstract class BaseActivity : SwipeBackActivity() {
         App.removeActivity(this)
     }
 
+    protected lateinit var mBinding: T
     protected abstract fun getLayout(): Int
     protected abstract fun initEventAndData()
 }

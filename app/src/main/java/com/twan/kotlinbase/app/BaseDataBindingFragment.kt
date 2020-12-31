@@ -8,17 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.jaeger.library.StatusBarUtil
 import com.twan.kotlinbase.R
 
-//如果你不使用databinding,请继承这个基类
-abstract class BaseFragment : Fragment() {
+//如果你使用databinding,请继承这个基类,用法不变
+abstract class BaseDataBindingFragment<T:ViewDataBinding> : Fragment() {
     protected var mActivity: Activity? = null
     protected var mContext: Context? = null
-    protected var mRootView: View? = null
-
+    protected lateinit var mBinding: T
     /**
      * 是否对用户可见
      */
@@ -37,23 +39,20 @@ abstract class BaseFragment : Fragment() {
     @JvmField @BindView(R.id.title) var title: TextView? = null
     @JvmField @BindView(R.id.tv_right) var tv_right: TextView? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        mRootView = LayoutInflater.from(mActivity).inflate(getLayoutId(), container, false)
-        ButterKnife.bind(this, mRootView!!)
-        initData(arguments)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        mBinding = DataBindingUtil.inflate(inflater,getLayoutId(),container, false)
+        getBundleData(arguments)
         initTitle()
-        return mRootView
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView(mRootView, savedInstanceState)
+        StatusBarUtil.setColor(mActivity, resources.getColor(R.color.colorAccent), 25)
+        ButterKnife.bind(this, view)
+        initView(view, savedInstanceState)
         mIsPrepare = true
-        getData()
+        reqData()
     }
 
 
@@ -92,7 +91,7 @@ abstract class BaseFragment : Fragment() {
     /**
      * 执行数据的加载
      */
-    protected fun initData(arguments: Bundle?) {}
+    protected fun getBundleData(arguments: Bundle?) {}
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
@@ -107,13 +106,13 @@ abstract class BaseFragment : Fragment() {
      */
     protected fun onVisibleToUser() {
         if (mIsPrepare && mIsVisible) {
-            getData()
+            reqData()
         }
     }
 
     /**
      * 懒加载，仅当用户可见切view初始化结束后才会执行
      */
-    open fun getData() {}
+    open fun reqData() {}
 
 }
