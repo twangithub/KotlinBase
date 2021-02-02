@@ -1,4 +1,4 @@
-package com.twan.kotlinbase.widgets.router
+package com.twan.kotlinbase.widgets
 
 import android.app.Activity
 import android.content.Intent
@@ -10,7 +10,7 @@ import java.io.Serializable
 import java.util.*
 
 /**
- * Created by twan on 2017/11/2.
+ * Created by twan on 2021/01/02.
  */
 class Router private constructor() {
     private val intent: Intent?
@@ -185,4 +185,13 @@ class Router private constructor() {
     init {
         intent = Intent()
     }
+
+
+    //回调
+    interface RouterCallback {
+        fun onBefore(from: Activity, to: Class<*>)
+        fun onNext(from: Activity, to: Class<*>)
+        fun onError(from: Activity, to: Class<*>, throwable: Throwable)
+    }
+
 }

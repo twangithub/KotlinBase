@@ -39,6 +39,6 @@
         android:layout_marginBottom="31dp"
         android:gravity="center"
         android:text="start"
-        android:textColor="@color/text_white"
+        android:textColor="@color/white"
         android:textSize="15sp"/>
 </RelativeLayout>

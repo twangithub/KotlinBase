@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="返回"
                 android:textSize="14sp"
-                android:textColor="@color/text_white"
+                android:textColor="@color/white"
                 android:background="@drawable/noborder_ripple"
                 android:visibility="gone"/>
 
@@ -65,7 +65,7 @@
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:gravity="center"
-                    android:textColor="@color/text_white"/>
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <ImageButton
@@ -88,7 +88,7 @@
                 android:layout_marginRight="10dp"
                 android:textSize="14sp"
                 android:text="更多"
-                android:textColor="@color/text_white"
+                android:textColor="@color/white"
                 android:background="@drawable/noborder_ripple"
                 android:visibility="gone"
                 />

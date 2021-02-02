@@ -7,11 +7,10 @@
     <color name="app_green">#06BA93</color>
     <color name="app_nav_item_normal">#BBBCCD</color>
     <color name="app_nav_item_select">#2BDBC0</color>
-    <color name="text_white">#ffffff</color>
     <color name="text_green">#2BDBC0</color>
     <color name="button_green">#2BDBC0</color>
-    <color name="app_white">#ffffff</color>
-    <color name="app_white_half">#80ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="white_half">#80ffffff</color>
     <color name="text_black">#2A2A30</color>
     <color name="text_yellow">#FF8532</color>
     <color name="text_gray">#777777</color>

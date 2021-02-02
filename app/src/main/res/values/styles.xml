@@ -36,7 +36,7 @@
 
     <style name="edittext" parent="@android:style/Widget.TextView">
         <item name="android:textSize">14sp</item>
-        <item name="android:gravity">center_vertical|center</item>
+        <item name="android:gravity">center_vertical|left</item>
         <item name="android:textColorHint">@color/text_gray</item>
         <item name="android:textColor">@color/text_black</item>
         <item name="android:background">@null</item>
@@ -48,12 +48,22 @@
         <item name="android:layout_centerVertical">true</item>
     </style>
 
-    <style name="layout"><!--外层的LinearLayout-->
+    <style name="layout">
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
-        <item name="android:layout_marginTop">15dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:background">@color/white</item>
+    </style>
+
+    <!--这种可以用radio,checkbox,swith,修改背景-->
+    <style name="checkbox">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/textcolor_selector</item>
+        <item name="android:background">@drawable/cb_check_no_icon</item>
     </style>
 
 </resources>

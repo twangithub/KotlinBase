@@ -40,7 +40,7 @@ abstract class BaseActivity : SwipeBackActivity() {
         super.onCreate(savedInstanceState)
         setContentView(getLayout())
         StatusBarUtil.setLightMode(this)
-        StatusBarUtil.setColor(this, resources.getColor(R.color.text_white), 25)
+        StatusBarUtil.setColor(this, resources.getColor(R.color.white), 25)
         ButterKnife.bind(this)
         mContext = this
         App.addActivity(this)
