@@ -13,6 +13,7 @@ import butterknife.OnClick
 import com.jaeger.library.StatusBarUtil
 import com.twan.kotlinbase.R
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity
+import org.greenrobot.eventbus.EventBus
 
 //如果你使用databinding,请继承这个基类,用法不变
 abstract class BaseDataBindingActivity<T: ViewDataBinding> : SwipeBackActivity() {
@@ -36,6 +37,7 @@ abstract class BaseDataBindingActivity<T: ViewDataBinding> : SwipeBackActivity()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this,getLayout())
+        EventBus.getDefault().register(this)
         StatusBarUtil.setLightMode(this)
         StatusBarUtil.setColor(this, resources.getColor(R.color.colorAccent), 25)
         ButterKnife.bind(this)
@@ -47,10 +49,20 @@ abstract class BaseDataBindingActivity<T: ViewDataBinding> : SwipeBackActivity()
     @OnClick(R.id.back)
     fun back(view: View?) {
         finish()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+    }
+
+    //物理返回键
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this)
+        }
         App.removeActivity(this)
     }
 

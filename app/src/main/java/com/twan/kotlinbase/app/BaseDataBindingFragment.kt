@@ -15,6 +15,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.jaeger.library.StatusBarUtil
 import com.twan.kotlinbase.R
+import org.greenrobot.eventbus.EventBus
 
 //如果你使用databinding,请继承这个基类,用法不变
 abstract class BaseDataBindingFragment<T:ViewDataBinding> : Fragment() {
@@ -41,6 +42,7 @@ abstract class BaseDataBindingFragment<T:ViewDataBinding> : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mBinding = DataBindingUtil.inflate(inflater,getLayoutId(),container, false)
+        EventBus.getDefault().register(this)
         getBundleData(arguments)
         initTitle()
         return mBinding.root
@@ -107,6 +109,13 @@ abstract class BaseDataBindingFragment<T:ViewDataBinding> : Fragment() {
     protected fun onVisibleToUser() {
         if (mIsPrepare && mIsVisible) {
             reqData()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this)
         }
     }
 

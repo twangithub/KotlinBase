@@ -66,7 +66,7 @@ class MyBottomPopup(context: Activity) : BottomPopupView(context) {
             Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA) {
             var takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(mContext.packageManager) != null) {
-                var currPath = Environment.getExternalStorageDirectory().path + "/" + System.currentTimeMillis() + ".jpg"
+                var currPath= context.filesDir.path+ "/" + System.currentTimeMillis() + ".jpg"
                 LogUtils.e("路径:$currPath")
                 var iscreated = FileUtils.createFileByDeleteOldFile(currPath)
                 var photoFile = FileUtils.getFileByPath(currPath)
