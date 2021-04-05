@@ -6,12 +6,13 @@ import androidx.viewpager2.widget.ViewPager2
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.adapter.BottomViewPagerAdapter
 import com.twan.kotlinbase.app.BaseActivity
+import com.twan.kotlinbase.databinding.ActivityMainBinding
 import com.twan.kotlinbase.fragment.Tab1Fragment
 import com.twan.kotlinbase.fragment.Tab2Fragment
 import com.twan.kotlinbase.fragment.Tab3Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     companion object {
         lateinit var main:MainActivity

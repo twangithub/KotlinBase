@@ -12,11 +12,13 @@ import butterknife.ButterKnife
 import butterknife.OnClick
 import com.jaeger.library.StatusBarUtil
 import com.twan.kotlinbase.R
+import com.twan.kotlinbase.event.CommonEvent
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity
 import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 //如果你使用databinding,请继承这个基类,用法不变
-abstract class BaseDataBindingActivity<T: ViewDataBinding> : SwipeBackActivity() {
+abstract class BaseActivity<T: ViewDataBinding> : SwipeBackActivity() {
     protected var mContext: Activity? = null
 
     @BindView(R.id.back)
@@ -64,6 +66,11 @@ abstract class BaseDataBindingActivity<T: ViewDataBinding> : SwipeBackActivity()
             EventBus.getDefault().unregister(this)
         }
         App.removeActivity(this)
+    }
+
+    @Subscribe
+    open fun subscribe(event: CommonEvent){
+
     }
 
     protected lateinit var mBinding: T

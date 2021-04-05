@@ -7,10 +7,11 @@ import com.just.agentweb.AgentWeb
 import com.just.agentweb.DefaultWebClient
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.app.BaseActivity
+import com.twan.kotlinbase.databinding.ActivityWebBinding
 import kotlinx.android.synthetic.main.activity_web.*
 
 
-class WebActivity : BaseActivity(){
+class WebActivity : BaseActivity<ActivityWebBinding>(){
 
     var mAgentWeb : AgentWeb? = null
 

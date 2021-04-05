@@ -6,8 +6,9 @@ import butterknife.BindView
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.app.BaseFragment
+import com.twan.kotlinbase.databinding.Tab2FragmentBinding
 
-class Tab2Fragment: BaseFragment() {
+class Tab2Fragment: BaseFragment<Tab2FragmentBinding>() {
     @BindView(R.id.refreshLayout) lateinit var refreshLayout: SmartRefreshLayout
 
     override fun getLayoutId(): Int {

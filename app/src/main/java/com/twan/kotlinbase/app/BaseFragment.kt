@@ -15,10 +15,12 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.jaeger.library.StatusBarUtil
 import com.twan.kotlinbase.R
+import com.twan.kotlinbase.event.CommonEvent
 import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 //如果你使用databinding,请继承这个基类,用法不变
-abstract class BaseDataBindingFragment<T:ViewDataBinding> : Fragment() {
+abstract class BaseFragment<T:ViewDataBinding> : Fragment() {
     protected var mActivity: Activity? = null
     protected var mContext: Context? = null
     protected lateinit var mBinding: T
@@ -117,6 +119,11 @@ abstract class BaseDataBindingFragment<T:ViewDataBinding> : Fragment() {
         if (EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this)
         }
+    }
+
+    @Subscribe
+    open fun subscribe(event: CommonEvent){
+
     }
 
     /**

@@ -7,13 +7,14 @@ import butterknife.BindView
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.twan.kotlinbase.R
 import com.twan.kotlinbase.app.BaseFragment
+import com.twan.kotlinbase.databinding.Tab1FragmentBinding
 import com.twan.kotlinbase.network.Response
 import com.twan.kotlinbase.network.RxHttpScope
 import rxhttp.toClass
 import rxhttp.wrapper.param.RxHttp
 
 
-class Tab1Fragment: BaseFragment() {
+class Tab1Fragment: BaseFragment<Tab1FragmentBinding>() {
     @BindView(R.id.refreshLayout) lateinit var refreshLayout: SmartRefreshLayout
 
     override fun getLayoutId(): Int {
