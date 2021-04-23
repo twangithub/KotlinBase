@@ -31,12 +31,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_marginTop="100dp"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Fragment 1" />
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_num"
+                        android:layout_marginTop="100dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <Button
+                        android:id="@+id/btn_add"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="自增"/>
+                </LinearLayout>
+
             </ScrollView>
 
             <com.scwang.smart.refresh.footer.ClassicsFooter
