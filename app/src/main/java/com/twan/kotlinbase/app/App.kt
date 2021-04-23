@@ -30,6 +30,17 @@ class App : Application() {
         }
 
         @JvmStatic
+        fun removeActivity(cls: Class<*>) {
+            synchronized(allActivities) {
+                for (act in allActivities) {
+                    if (act.javaClass == cls){
+                        act.finish()
+                    }
+                }
+            }
+        }
+
+        @JvmStatic
         fun exitApp() {
             synchronized(allActivities) {
                 for (act in allActivities) {
